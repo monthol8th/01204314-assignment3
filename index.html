@@ -1,0 +1,475 @@
+<html>
+
+<head>
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    google.charts.load('current', { packages: ['corechart', 'line'] });
+    google.charts.setOnLoadCallback(drawLineChart);
+
+    function drawLineChart() {
+      data = google.visualization.arrayToDataTable([
+        ['Year', 'Budget', 'Expense'],
+        ['2003', 107753900, 90043174],
+        ['2004', 85343300, 88150561],
+        ['2005', 86064600, 112031280],
+        ['2006', 98023600, 87998487],
+        ['2007', 115151900, 109573985],
+        ['2008', 104830400, 108840797],
+        ['2009', 110247100, 144720178],
+        ['2010', 105589500, 114458917],
+        ['2011', 106625600, 108311830],
+        ['2012', 111492800, 111872974],
+        ['2013', 110081300, 104317444],
+        ['2014', 107851000, 126467712],
+        ['2015', 109260300, 116842279],
+        ['2016', 111606500, 111606500]
+      ]);
+
+      options = {
+        hAxis: {
+          title: 'Year',
+        },
+        vAxis: {
+          title: 'THB',
+        },
+        colors: ['#097138', '#a52714'],
+        height: 500,
+
+      };
+
+      chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
+      chart.draw(data, options);
+
+
+      data = google.visualization.arrayToDataTable([
+        ['Year', 'Budget', 'Expense'],
+        ['2003', 19716600, 20617830],
+        ['2004', 17991000, 14266890],
+        ['2005', 28110100, 29052544],
+        ['2006', 28115500, 28056908],
+        ['2007', 28326300, 28114574],
+        ['2008', 28326300, 28310181],
+        ['2009', 27954800, 31144619],
+        ['2010', 25716300, 26961869],
+        ['2011', 24409900, 24932792],
+        ['2012', 23113400, 22869353],
+        ['2013', 23113400, 22882171],
+        ['2014', 23667600, 23643142],
+        ['2015', 21880800, 21764571],
+        ['2016', 21880800, 21865800]
+
+      ]);
+
+      chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+      chart.draw(data, options);
+
+      data = google.visualization.arrayToDataTable([
+        ['Year', 'Budget', 'Expense'],
+        ['2003', 0, 0],
+        ['2004', 0, 0],
+        ['2005', 0, 0],
+        ['2006', 0, 0],
+        ['2007', 600000, 540000],
+        ['2008', 0, 0],
+        ['2009', 0, 0],
+        ['2010', 0, 0],
+        ['2011', 0, 0],
+        ['2012', 0, 0],
+        ['2013', 0, 0],
+        ['2014', 0, 0],
+        ['2015', 0, 0],
+        ['2016', 6605800, 6396000]
+
+      ]);
+
+      chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+      chart.draw(data, options);
+
+
+      data = google.visualization.arrayToDataTable([
+        ['Year', 'Employ', 'Operate', 'Building',],
+        ['2003', 107753900, 19716600, 0],
+        ['2004', 85343300, 17991000, 0],
+        ['2005', 86064600, 28110100, 0],
+        ['2006', 98023600, 28115500, 0],
+        ['2007', 115151900, 28326300, 600000],
+        ['2008', 104830400, 28326300, 0],
+        ['2009', 110247100, 27954800, 0],
+        ['2010', 105589500, 25716300, 0],
+        ['2011', 106625600, 24409900, 0],
+        ['2012', 111492800, 23113400, 0],
+        ['2013', 110081300, 23113400, 0],
+        ['2014', 107851000, 23667600, 0],
+        ['2015', 109260300, 21880800, 0],
+        ['2016', 111606500, 21880800, 6605800]
+
+      ]);
+
+      options = {
+        vAxis: { title: "THB" }, isStacked: true,
+        hAxis: { title: "Year" },
+        height: 500,
+      }
+
+
+      chart = new google.visualization.ColumnChart(document.getElementById('stack_div1'));
+      chart.draw(data, options);
+
+      data = google.visualization.arrayToDataTable([
+        ['Year', 'Employ', 'Operate', 'Building',],
+        ['2003', 90043174, 20617830, 0],
+        ['2004', 88150561, 14266890, 0],
+        ['2005', 112031280, 29052544, 0],
+        ['2006', 87998487, 28056908, 0],
+        ['2007', 109573985, 28114574, 540000],
+        ['2008', 108840797, 28310181, 0],
+        ['2009', 144720178, 31144619, 0],
+        ['2010', 114458917, 26961869, 0],
+        ['2011', 108311830, 24932792, 0],
+        ['2012', 111872974, 22869353, 0],
+        ['2013', 104317444, 22882171, 0],
+        ['2014', 126467712, 23643142, 0],
+        ['2015', 116842279, 21764571, 0],
+        ['2016', 111606500, 21865800, 6396000]
+
+
+      ]);
+
+
+      options = {
+        vAxis: { title: "THB" }, isStacked: true,
+        height: 500,
+        hAxis: { title: "Year" }
+      }
+
+      chart = new google.visualization.ColumnChart(document.getElementById('stack_div2'));
+      chart.draw(data, options);
+
+      data = new google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Bachelor', 4672],
+        ['Master', 1617],
+        ['Phd', 238.5],
+        ['Teacher', 319]
+      ])
+      options = {
+        pieStartAngle: 120,
+        height: 300,
+      }
+      chart = new google.visualization.PieChart(document.getElementById('pie_div1'));
+      chart.draw(data, options);
+
+      data = new google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Employ', 111606500],
+        ['Operate', 21880800],
+        ['Building', 6605800],
+      ])
+      options = {
+        pieStartAngle: 120,
+        height: 300,
+      }
+      chart = new google.visualization.PieChart(document.getElementById('pie_div2'));
+      chart.draw(data, options);
+
+      data = new google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Employ', 111606500],
+        ['Operate', 21880800],
+        ['Building', 6396000],
+      ])
+      options = {
+        pieStartAngle: 120,
+        height: 300,
+      }
+      chart = new google.visualization.PieChart(document.getElementById('pie_div3'));
+      chart.draw(data, options);
+
+      var trace1 = {
+        y: [107753900,
+          85343300,
+          86064600,
+          98023600,
+          115151900,
+          104830400,
+          110247100,
+          105589500,
+          106625600,
+          111492800,
+          110081300,
+          107851000,
+          109260300,
+          111606500,
+        ],
+        name: 'Budget',
+        marker: { color: '#3D9970' },
+        type: 'box'
+      };
+      var trace2 = {
+        y:
+          [
+            90043174,
+            88150561,
+            112031280,
+            87998487,
+            109573985,
+            108840797,
+            144720178,
+            114458917,
+            108311830,
+            111872974,
+            104317444,
+            126467712,
+            116842279,
+            111606500,
+          ],
+        name: 'Expense',
+        marker: { color: '#FF4136' },
+        type: 'box'
+      };
+
+
+      var data = [trace1, trace2];
+
+      Plotly.newPlot('boxplot_div1', data);
+
+      var trace1 = {
+        y: [
+          19716600,
+          17991000,
+          28110100,
+          28115500,
+          28326300,
+          28326300,
+          27954800,
+          25716300,
+          24409900,
+          23113400,
+          23113400,
+          23667600,
+          21880800,
+          21880800,
+        ],
+        name: 'Budget',
+        marker: { color: '#3D9970' },
+        type: 'box'
+      };
+      var trace2 = {
+        y:
+          [
+            20617830,
+            14266890,
+            29052544,
+            28056908,
+            28114574,
+            28310181,
+            31144619,
+            26961869,
+            24932792,
+            22869353,
+            22882171,
+            23643142,
+            21764571,
+            21865800,
+          ],
+        name: 'Expense',
+        marker: { color: '#FF4136' },
+        type: 'box'
+      };
+
+
+      var data = [trace1, trace2];
+
+      Plotly.newPlot('boxplot_div2', data);
+
+      var trace1 = {
+        y: [
+          127473046,
+          103336847,
+          114177248,
+          126141649,
+          144080750,
+          133159251,
+          138204452,
+          131308353,
+          131038054,
+          134608755,
+          133197256,
+          131521157,
+          131143658,
+          140095659
+        ],
+        name: 'Budget',
+        marker: { color: '#3D9970' },
+        type: 'box'
+      };
+      var trace2 = {
+        y:
+          [
+            110663550,
+            102419998,
+            141086372,
+            116057944,
+            138231109,
+            137153529,
+            175867349,
+            141423339,
+            133247176,
+            134744882,
+            127202171,
+            150113411,
+            138609408,
+            139870859
+          ],
+        name: 'Expense',
+        marker: { color: '#FF4136' },
+        type: 'box'
+      };
+
+
+      var data = [trace1, trace2];
+
+      Plotly.newPlot('boxplot_div3', data);
+
+    }
+  </script>
+  <style>
+    body {
+      max-width: 900px;
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 64px;
+    }
+
+    h3 {
+      margin-top: 50px;
+    }
+
+    table {
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>งบประมาณและรายจ่ายของคณะวิศวกรรมศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ บางเขน</h1>
+  <p>
+    <b>ที่มาข้อมูล: </b> คลังข้อมูล มหาวิทยาลัยเกษตรศาสตร์ (http://www.planning.ku.ac.th)
+
+  </p>
+  <h3>Descriptive statistics ของข้อมูลงบประมาณ</h3>
+  <table border="1" cellpadding="10">
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td>employ</td>
+        <td>operate</td>
+        <td>building</td>
+        <td>sum</td>
+      </tr>
+      <tr>
+        <td>Min</td>
+        <td>85,343,300</td>
+        <td>17,991,000</td>
+        <td>0</td>
+        <td>103,336,847</td>
+      </tr>
+      <tr>
+        <td>Max</td>
+        <td>115,151,900</td>
+        <td>28,326,300</td>
+        <td>6,605,800</td>
+        <td>144,080,750</td>
+      </tr>
+      <tr>
+        <td>Range</td>
+        <td>29,808,600</td>
+        <td>10,335,300</td>
+        <td>6,605,800</td>
+        <td>40,743,903</td>
+      </tr>
+      <tr>
+        <td>S.D.</td>
+        <td>9,083,802.813</td>
+        <td>3,422,581.324</td>
+        <td>1,760,414.47</td>
+        <td>10,369,684.93</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Descriptive statistics ของข้อมูลรายจ่าย</h3>
+  <table border="1" cellpadding="10">
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td>employ</td>
+        <td>operate</td>
+        <td>building</td>
+        <td>sum</td>
+      </tr>
+      <tr>
+        <td>Min</td>
+        <td>&nbsp;87,998,487.00&nbsp;</td>
+        <td>&nbsp;14,266,890.00&nbsp;</td>
+        <td>&nbsp;0&nbsp;&nbsp;&nbsp;</td>
+        <td>&nbsp;102,419,998.00&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Max</td>
+        <td>&nbsp;144,720,178.00&nbsp;</td>
+        <td>&nbsp;31,144,619.00&nbsp;</td>
+        <td>&nbsp;6,396,000.00&nbsp;</td>
+        <td>&nbsp;175,867,349.00&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Range</td>
+        <td>&nbsp;56,721,691.00&nbsp;</td>
+        <td>&nbsp;16,877,729.00&nbsp;</td>
+        <td>&nbsp;6,396,000.00&nbsp;</td>
+        <td>&nbsp;73,447,351.00&nbsp;</td>
+      </tr>
+      <tr>
+        <td>S.D.</td>
+        <td>&nbsp;15,059,816.67&nbsp;</td>
+        <td>&nbsp;4,397,742.02&nbsp;</td>
+        <td>&nbsp;1,704,386.27&nbsp;</td>
+        <td>&nbsp;17,768,537.08&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>งบประมาณและรายจ่ายหมวด Employ</h3>
+  <div id="boxplot_div1"></div>
+  <h3>งบประมาณและรายจ่ายหมวด Operate</h3>
+  <div id="boxplot_div2"></div>
+  <h3>งบประมาณและรายจ่ายหมวด Building</h3>
+  <div id="boxplot_div3"></div>
+  <h3>งบประมาณและรายจ่ายหมวด Employ</h3>
+  <div id="chart_div1"></div>
+  <h3>งบประมาณและรายจ่ายหมวด Operate</h3>
+  <div id="chart_div2"></div>
+  <h3>งบประมาณและรายจ่ายหมวด Building</h3>
+  <div id="chart_div3"></div>
+  <h3>งบประมาณ คณะวิศวกรรมศาสตร์</h3>
+  <div id="stack_div1"></div>
+  <h3>รายจ่าย คณะวิศวกรรมศาสตร์</h3>
+  <div id="stack_div2"></div>
+  <h3>สัดส่วนบุคลากร คณะวิศวกรรมศาสตร์ปี 2559</h3>
+  <div id="pie_div1"></div>
+  <h3>สัดส่วนงบประมาณ คณะวิศวกรรมศาสตร์ ปี 2559</h3>
+  <div id="pie_div2"></div>
+  <h3>สัดส่วนรายจ่าย คณะวิศวกรรมศาสตร์ ปี 2559</h3>
+  <div id="pie_div3"></div>
+
+
+
+  </div>
+</body>
+
+</html>
